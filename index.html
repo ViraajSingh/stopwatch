@@ -3,53 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stop Watch</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <button id="go">Click me</button>
-    <div id="output">00:00:00.000</div>
-    <div id="result"></div>
-    <script>
-        $(document).ready(function() {
-            let startTime;
-            let updatedTime;
-            let difference;
-            let tInterval;
-            let running = false;
+    <!-- this is the button to start the timer  -->
+     <div class="container">
+        <div class="button-container">
+            <button id="go">Click me</button> 
+            <!-- this is the button to pause the timer  -->
+            <button id="pause">Pause</button>
+        </div>
+    <!-- this is the button to pause the timer -->
+    <!-- intial value of the timer in this div  -->
+     <div><div id="output">00:00:00.000</div></div>
+     <div id="difference-container"><div id="difference"></div></div>
+     </div>
 
-            $('#go').click(function() {
-                if (!running) {
-                    startTime = new Date().getTime();
-                    tInterval = setInterval(getShowTime, 1);
-                    running = true;
-                    $('#go').text('Stop');
-                } else {
-                    clearInterval(tInterval);
-                    running = false;
-                    $('#go').text('Click me');
-                }
-            });
-
-            function getShowTime() {
-                updatedTime = new Date().getTime();
-                difference = updatedTime - startTime;
-
-                let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                let milliseconds = Math.floor((difference % 1000));
-
-                hours = (hours < 10) ? "0" + hours : hours;
-                minutes = (minutes < 10) ? "0" + minutes : minutes;
-                seconds = (seconds < 10) ? "0" + seconds : seconds;
-                milliseconds = (milliseconds < 100) ? "0" + milliseconds : milliseconds;
-                milliseconds = (milliseconds < 10) ? "0" + milliseconds : milliseconds;
-
-                $('#output').text(hours + ':' + minutes + ':' + seconds + '.' + milliseconds);
-            }
-        });
-    </script>
 </body>
 <script src="./script.js"></script>
 
