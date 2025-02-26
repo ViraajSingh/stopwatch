@@ -7,17 +7,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <!-- this is the button to start the timer  -->
+<body class="body">
+    <h1 class="title">TRY OUT THIS STOPWATCH AND TRY TO GET CLOSE TO 5 Seconds</h1>
      <div class="container">
         <div class="button-container">
-            <button id="go">Click me</button> 
+            <button class="button" id="go">Click me</button> 
             <!-- this is the button to pause the timer  -->
-            <button id="pause">Pause</button>
+            <button class="button" id="pause">Lap</button>
         </div>
     <!-- this is the button to pause the timer -->
     <!-- intial value of the timer in this div  -->
      <div><div id="output">00:00:00.000</div></div>
+     <div class="lap-container"><div id="lap"></div></div>
+
      <div id="difference-container"><div id="difference"></div></div>
      </div>
 
