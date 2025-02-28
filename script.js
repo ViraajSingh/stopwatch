@@ -8,10 +8,10 @@ $(document).ready(function() {
     let lap = 1;
 
     function formating(s, m, h, milliseconds) {
-        s = (s < 10) ? "0" + s : s;
+        s = (s < 10) ? "0" + s : s; //this is formattign the number so that it looks liek a timer that why it has to check if it is less than ten so that it can make sure that it is a oen digit number 
         m = (m < 10) ? "0" + m : m;
-        h = (h < 10) ? "0" + h : h;
-        milliseconds = (milliseconds < 100) ? "0" + milliseconds : milliseconds;
+        h = (h < 10) ? "0" + h : h;//eg 5 = 05
+        milliseconds = (milliseconds < 100) ? "0" + milliseconds : milliseconds;//this is formattign the number so that it looks liek a timer that why it has to check if it is less than ten so that it can make sure that it is a oen digit number
         return h + ':' + m + ':' + s + '.' + milliseconds;
     }
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
             }, 10);
             $(this).text('Stop');//changes the text of go to shwo stop to the user to tell them that they can stop the timer with the same button 
             running = true;//makes sure to show the the timmer is running 
-            $("#pause").text('Lap');
+            $("#pause").text('Lap');//chaqnges the text of the pause button to show that the user can hit the lap button
         }
     });
     $("#pause").click(function() {
