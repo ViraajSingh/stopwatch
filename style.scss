@@ -46,11 +46,29 @@
 
 .lap-container{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+}
+
+#difference-container{
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 400px;
     margin-top: 20px;
-    border: 10px solid #4CAF50;
+    font-size: 20px;
+    background-color: rgb(37, 37, 37);
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+#difference{
+    margin-left: 10px;
+    color: #f1f1f1;
     
+
 }
